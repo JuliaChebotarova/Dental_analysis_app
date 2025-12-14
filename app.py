@@ -36,6 +36,8 @@ def load_model():
     model = YOLO("best.pt")
     return model
 
+model = load_model()
+
 # try:
 #     model = load_model()
 #     st.success("✅ Модель успішно завантажена!")
@@ -95,4 +97,5 @@ if uploaded_file is not None:
             if count > 0:
                 st.info(f"Знайдено патологій: {count}")
             else:
+
                 st.warning("Патологій не знайдено.")
