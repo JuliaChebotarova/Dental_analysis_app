@@ -9,7 +9,6 @@ import gdown
 st.set_page_config(page_title="Dental Analysis", page_icon="🦷", layout="wide")
 
 st.title("Діагностичний аналіз зубних знімків")
-st.write("Завантажте знімок і дізнайтеся про свої патології!")
 
 # Завантаження моделі
 @st.cache_resource
@@ -35,7 +34,7 @@ conf_threshold = st.sidebar.slider(
 )
 
 # Завантаження фото
-uploaded_file = st.file_uploader('', type=["jpg", "png", "jpeg"])
+uploaded_file = st.file_uploader('Завантажте знімок і дізнайтеся про свої патології:', type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
@@ -61,5 +60,6 @@ if uploaded_file is not None:
             else:
 
                 st.warning("Патологій не знайдено.")
+
 
 
